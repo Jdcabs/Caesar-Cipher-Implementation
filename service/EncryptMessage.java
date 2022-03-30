@@ -47,6 +47,9 @@ public class EncryptMessage {
             counter++;
         }
 
+        System.out.println(normalAlphabet);
+        System.out.println(cipherAlphabeth);
+        
         // this is the place order of the encrypted message.
         String encryptedMessage = "";
         int counterString = 0;
