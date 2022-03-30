@@ -53,7 +53,11 @@ public class EncryptMessage {
         for (int i = 0; i < getMessage().length(); i++) {
 
             int temp = normalAlphabeth.indexOf(getMessage().toUpperCase().charAt(counterString));
-            encryptedMessage = encryptedMessage + cipherAlphabeth.get(temp);
+            if (temp < 0) {
+                encryptedMessage = encryptedMessage + " ";
+            } else {
+                encryptedMessage = encryptedMessage + cipherAlphabeth.get(temp);
+            }
             counterString = counterString + 1;
         }
 

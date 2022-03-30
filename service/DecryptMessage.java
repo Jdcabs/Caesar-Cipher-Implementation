@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DecryptMessage {
-    
+
     private int key;
     private String message;
 
     public DecryptMessage(int key, String message) {
         this.key = key;
         this.message = message;
-        //TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
     }
-    
 
     public int getKey() {
         return key;
     }
+
     public String getMessage() {
         return message;
     }
 
     public String decryptMessages() {
-        
+
         // Creating a Reference of a Alpabetical Order
         ArrayList<Character> normalAlphabeth = new ArrayList<>(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'));
@@ -43,17 +43,19 @@ public class DecryptMessage {
             counter++;
         }
 
-        
         String dencryptedMessage = "";
         int counterString = 0;
 
         for (int i = 0; i < getMessage().length(); i++) {
 
             int temp = cipherAlphabeth.indexOf(getMessage().toUpperCase().charAt(counterString));
-            dencryptedMessage = dencryptedMessage + normalAlphabeth.get(temp);
+            if (temp < 0) {
+                dencryptedMessage = dencryptedMessage + " ";
+            } else {
+                dencryptedMessage = dencryptedMessage + normalAlphabeth.get(temp);
+            }
             counterString = counterString + 1;
         }
-
         return "Decrypted Message: " + dencryptedMessage;
     }
 }
