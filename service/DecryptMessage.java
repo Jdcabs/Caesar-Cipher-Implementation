@@ -25,7 +25,7 @@ public class DecryptMessage {
     public String decryptMessages() {
 
         // Creating a Reference of a Alpabetical Order
-        ArrayList<Character> normalAlphabeth = new ArrayList<>(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+        ArrayList<Character> normalAlphabet = new ArrayList<>(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'));
 
         // Here we will Create a adjusted Alpabetical Order,
@@ -34,12 +34,12 @@ public class DecryptMessage {
         int counter = 0;
 
         // Here we will swap the Alpabetical Order to Cipher Alpabetical Order.
-        for (int i = getKey(); i < normalAlphabeth.size(); i++) {
-            cipherAlphabeth.add(normalAlphabeth.get(i));
+        for (int i = getKey(); i < normalAlphabet.size(); i++) {
+            cipherAlphabeth.add(normalAlphabet.get(i));
         }
 
         for (int x = cipherAlphabeth.size(); x < 26; x++) {
-            cipherAlphabeth.add(x, normalAlphabeth.get(counter));
+            cipherAlphabeth.add(x, normalAlphabet.get(counter));
             counter++;
         }
 
@@ -52,7 +52,7 @@ public class DecryptMessage {
             if (temp < 0) {
                 dencryptedMessage = dencryptedMessage + " ";
             } else {
-                dencryptedMessage = dencryptedMessage + normalAlphabeth.get(temp);
+                dencryptedMessage = dencryptedMessage + normalAlphabet.get(temp);
             }
             counterString = counterString + 1;
         }
