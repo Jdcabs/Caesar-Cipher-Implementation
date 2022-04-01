@@ -16,16 +16,14 @@ public class EncryptMessage {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
+    // Constructor.
     public EncryptMessage(int key, String message) {
         this.key = key;
         this.message = message;
     }
 
-    public String encryptMessages() {
+    public void encryptMessages() {
+
         // Creating a Reference of a Alpabetical Order
         ArrayList<Character> normalAlphabet = new ArrayList<>(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'));
@@ -34,7 +32,7 @@ public class EncryptMessage {
         // depends on what key was inputed.
         ArrayList<Character> cipherAlphabeth = new ArrayList<>();
 
-        // Way to count every elements of the message inputed by the user.
+        // Way to get the remaining letters in the alphabet
         int counter = 0;
 
         // Here we will swap the Alpabetical Order to Cipher Alpabetical Order.
@@ -53,17 +51,20 @@ public class EncryptMessage {
         // this is the place order of the encrypted message.
         String encryptedMessage = "";
         int counterString = 0;
+
         for (int i = 0; i < getMessage().length(); i++) {
 
             int temp = normalAlphabet.indexOf(getMessage().toUpperCase().charAt(counterString));
+
             if (temp < 0) {
                 encryptedMessage = encryptedMessage + " ";
             } else {
-                encryptedMessage = encryptedMessage + cipherAlphabeth.get(temp);
+                encryptedMessage = encryptedMessage.toUpperCase() + cipherAlphabeth.get(temp);
             }
+
             counterString = counterString + 1;
         }
 
-        return "Encrypted Message: " + encryptedMessage;
+         System.out.println("Encrypted Message: " + encryptedMessage);
     }
 }

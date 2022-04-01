@@ -22,7 +22,7 @@ public class DecryptMessage {
         return message;
     }
 
-    public String decryptMessages() {
+    public void decryptMessages() {
 
         // Creating a Reference of a Alpabetical Order
         ArrayList<Character> normalAlphabet = new ArrayList<>(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
@@ -43,6 +43,7 @@ public class DecryptMessage {
             counter++;
         }
 
+        // returning the encrypted message to the original message.
         String dencryptedMessage = "";
         int counterString = 0;
 
@@ -56,6 +57,6 @@ public class DecryptMessage {
             }
             counterString = counterString + 1;
         }
-        return "Decrypted Message: " + dencryptedMessage;
+        System.out.println("Decrypted Message: " + dencryptedMessage);
     }
 }
