@@ -22,7 +22,7 @@ public class EncryptMessage {
         this.message = message;
     }
 
-    public void encryptMessages() {
+    public String encryptMessages() {
 
         // Creating a Reference of a Alpabetical Order
         ArrayList<Character> normalAlphabet = new ArrayList<>(Arrays.asList('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
@@ -45,8 +45,8 @@ public class EncryptMessage {
             counter++;
         }
 
-        System.out.println(normalAlphabet);
-        System.out.println(cipherAlphabeth);
+        // System.out.println(normalAlphabet);
+        // System.out.println(cipherAlphabeth);
         
         // this is the place order of the encrypted message.
         String encryptedMessage = "";
@@ -65,6 +65,6 @@ public class EncryptMessage {
             counterString = counterString + 1;
         }
 
-         System.out.println("Encrypted Message: " + encryptedMessage);
+         return encryptedMessage;
     }
 }
