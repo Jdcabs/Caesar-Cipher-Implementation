@@ -1,9 +1,7 @@
-import service.CaesarCipherImpl;
+    import service.CaesarCipherImpl;
 
-public class main {
+public class MainApp {
     public static void main(String[] args) {
-       
-
         CaesarCipherImpl imp = new CaesarCipherImpl();
         imp.startEcnryptionAndDecryption();
     }

@@ -65,7 +65,7 @@ public class CaesarCipherImpl {
             while(true) {
 
                 try {
-                System.out.print("\nPress [E] to Encryppt and [D] to Decrypt Message.(X to exit)");
+                System.out.print("\nPress [E] to Encryppt and [D] to Decrypt Message: ");
                 String decide = scanner.nextLine().toString();
 
                 if(decide.trim().equalsIgnoreCase("E")) {
@@ -75,15 +75,12 @@ public class CaesarCipherImpl {
                 }else if(decide.trim().equalsIgnoreCase("D")) {
                     
                     System.out.print("\nPlease Enter Encrypted Message Here: ");
-                    String decrypt = scanner.nextLine();
+                    String decrypt = scanner.nextLine().toUpperCase();
 
                     decryptMessage = new DecryptMessage(getKey(), decrypt);
                     System.out.println("\nDecrypted Message: " + decryptMessage.decryptMessages());
-
-                }else if(decide.trim().equalsIgnoreCase("X")) {
-                    System.out.println("\nBye...");
                     break;
-                }else 
+                }else
                     System.out.println("\nError! Invalid Input");
 
                 }catch (Exception e) {
@@ -98,6 +95,7 @@ public class CaesarCipherImpl {
             if(yesOrNo.trim().equalsIgnoreCase("Y")){
                 continue;
             }else{
+                System.out.println("GoodBye!");
                 break;
             }
         }
